@@ -1,9 +1,6 @@
 package es.marugi.learn.functional.v3interfaces;
 
-import es.marugi.learn.functional.v3interfaces.interfaces.Consumer;
-import es.marugi.learn.functional.v3interfaces.interfaces.Function;
-import es.marugi.learn.functional.v3interfaces.interfaces.Predicate;
-import es.marugi.learn.functional.v3interfaces.interfaces.Producer;
+import es.marugi.learn.functional.v3interfaces.interfaces.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +21,7 @@ public class MyFunctions {
         return result;
     }
 
-    public static List<String> transformList(List<String> list, Function transform) {
+    public static List<String> transformList(List<String> list, UnaryOperator transform) {
         return transform.apply(list);
     }
 
@@ -33,13 +30,8 @@ public class MyFunctions {
         consumer.accept(list);
     }
 
-    public static Integer reduceList(List<String> transformedList) {
-        int length = 0;
-        //int i = 0;
-        for(String brand : transformedList){
-            length += brand.length();
-        }
-        return length;
+    public static Integer reduceList(List<String> transformedList, Function function) {
+        return function.apply(transformedList);
     }
 
 }

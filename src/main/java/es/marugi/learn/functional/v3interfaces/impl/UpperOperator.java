@@ -1,12 +1,12 @@
 package es.marugi.learn.functional.v3interfaces.impl;
 
-import es.marugi.learn.functional.v3interfaces.interfaces.Function;
+import es.marugi.learn.functional.v3interfaces.interfaces.UnaryOperator;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class UpperFunction implements Function {
+public class UpperOperator implements UnaryOperator {
     @Override
     public List<String> apply(List<String> list) {
         List<String> result = new ArrayList<>();

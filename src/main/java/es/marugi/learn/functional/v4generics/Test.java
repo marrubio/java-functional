@@ -1,6 +1,6 @@
-package es.marugi.learn.functional.v3interfaces;
+package es.marugi.learn.functional.v4generics;
 
-import es.marugi.learn.functional.v3interfaces.impl.*;
+import es.marugi.learn.functional.v4generics.impl.*;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class Test {
 
     public static void main(String[] args){
 
-        System.out.println("Start v3interfaces.Test()");
+        System.out.println("Start v4generics.Test()");
 
         // Supply List
         List<String> brandList = MyFunctions.supplyList(new CarProducer());
