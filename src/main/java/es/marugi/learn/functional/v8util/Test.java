@@ -17,15 +17,15 @@ public class Test {
         System.out.println("Start v8util.main()");
         //https://www.w3schools.com/java/java_lambda.asp
 
-        MyListFlow<String> listFlow = new MyListFlow<>(new ArrayList<>());
+        MyListFlow listFlow = new MyListFlow(new ArrayList<>());
 
         Supplier<List> carProducer = () -> Arrays.asList("Audi","Bugatti","Peugeot","Renault","Mercedes","Ford","Ferrari","Maserati");
         Predicate<String> lengthPredicate = n -> n.length()>4;
-        Consumer<String> printConsumer = n -> System.out.println(n);
-        UnaryOperator<String> upperOperator = n -> {
+        Consumer<List> printConsumer = n -> System.out.println(n);
+        UnaryOperator<List> upperOperator = n -> {
             List<String> result = new ArrayList<>();
-            for(String brand : n){
-                result.add(brand.toUpperCase(Locale.ROOT));
+            for(Object brand :  n){
+                result.add(((String) brand).toUpperCase(Locale.ROOT));
             }
             return result;
         };
@@ -38,8 +38,8 @@ public class Test {
                 .printList(printConsumer)
                 .reduceList( n -> {
                     Integer brandsLength = 0;
-                    for(String brand : n){
-                        brandsLength += brand.length();
+                    for(Object brand : n){
+                        brandsLength += ((String) brand).length();
                     }
                     return brandsLength;
                 });
