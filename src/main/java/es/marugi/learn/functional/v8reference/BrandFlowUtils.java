@@ -1,4 +1,4 @@
-package es.marugi.learn.functional.v9reference;
+package es.marugi.learn.functional.v8reference;
 
 import es.marugi.learn.App;
 
@@ -17,7 +17,7 @@ public class BrandFlowUtils {
     }
 
     public static boolean lengthBrandPredicate(Object brand){
-        return ((String)brand).length()>3;
+        return ((String)brand).length()>10;
     }
 
     public static int lengthComparator(Object value1, Object value2){

@@ -1,4 +1,4 @@
-package es.marugi.learn.functional.v9reference;
+package es.marugi.learn.functional.v9optional;
 
 
 import java.util.*;
@@ -45,8 +45,12 @@ public class MyListFlow {
         return new MyListFlow(sortedList);
     }
 
-    public String max(Comparator<String> comparator) {
-        return Collections.max(list,comparator);
+    // The method returns an optional to control nullPointerException
+    public Optional<String> max(Comparator<String> comparator) {
+        if(list.isEmpty())
+            return Optional.empty();
+        else
+            return Optional.of(Collections.max(list,comparator));
     }
 
 }

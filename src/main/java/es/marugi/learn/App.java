@@ -1,6 +1,6 @@
 package es.marugi.learn;
 
-import es.marugi.learn.functional.v9reference.Test;
+import es.marugi.learn.functional.v9optional.Test;
 
 /**
  * Hello world!
