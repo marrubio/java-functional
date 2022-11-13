@@ -7,7 +7,7 @@ public class Test {
 
     public static void main(String[] args){
 
-        System.out.println("Start v9reference.main()");
+        System.out.println("Start v8reference.main()");
         //https://www.w3schools.com/java/java_lambda.asp
 
         MyListFlow listFlow = new MyListFlow(new ArrayList<>());
