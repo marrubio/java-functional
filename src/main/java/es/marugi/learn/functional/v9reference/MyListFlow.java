@@ -1,8 +1,7 @@
 package es.marugi.learn.functional.v9reference;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.*;
 
 public class MyListFlow {
@@ -26,10 +25,8 @@ public class MyListFlow {
     }
 
     public MyListFlow transformList(UnaryOperator<List<String>> transform) {
-
         return new MyListFlow(transform.apply(list));
     }
-
 
     public MyListFlow printList(Consumer<List<String>> consumer) {
         consumer.accept(list);
@@ -42,12 +39,14 @@ public class MyListFlow {
     }
 
 
-    public int sumLengthBrands(List<String> brandsList){
-        int brandsLength = 0;
-        for(String brand : brandsList){
-            brandsLength +=  brand.length();
-        }
-        return brandsLength;
+    public MyListFlow sortList(Comparator<String> comparator) {
+        List<String> sortedList = new ArrayList<>(list);
+        sortedList.sort(comparator);
+        return new MyListFlow(sortedList);
+    }
+
+    public String max(Comparator<String> comparator) {
+        return Collections.max(list,comparator);
     }
 
 }

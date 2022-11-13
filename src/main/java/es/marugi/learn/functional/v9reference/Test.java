@@ -1,6 +1,6 @@
 package es.marugi.learn.functional.v9reference;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class Test {
@@ -12,15 +12,23 @@ public class Test {
 
         MyListFlow listFlow = new MyListFlow(new ArrayList<>());
 
-        Integer length = listFlow.supply(BrandFlowUtils::getBrandList)
-                .filterList(BrandFlowUtils::lengthBrandPredicate)
+        String maxLengthBrand = listFlow.supply(BrandFlowUtils::loadBrandsFromConfigFile)
                 .transformList(BrandFlowUtils::upperText)
+                .filterList(BrandFlowUtils::lengthBrandPredicate)
+                .sortList(BrandFlowUtils::lengthComparator)
                 .printList(System.out::println)
-                .reduceList(listFlow::sumLengthBrands);
+                .max(BrandFlowUtils::lengthComparator)
+                //.reduceList(listFlow::sumLengthBrands)
+                ;
 
-        System.out.println("Total Length:" + length );
+        System.out.println("Max length brand:" + maxLengthBrand );
 
     }
+
+
+
+
+
 
 
 
