@@ -8,12 +8,8 @@ import java.util.*;
 
 public class BrandFlowUtils {
 
-    public static List<String> upperText(List<String> brandList){
-        List<String> result = new ArrayList<>();
-        for(String brand :  brandList){
-            result.add(brand.toUpperCase(Locale.ROOT));
-        }
-        return result;
+    public static String upperText(String brand){
+        return brand.toUpperCase(Locale.ROOT);
     }
 
     public static boolean lengthBrandPredicate(Object brand){

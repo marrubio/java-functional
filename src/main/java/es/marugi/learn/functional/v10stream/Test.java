@@ -16,7 +16,7 @@ public class Test {
         // Native list stream
         String maxLengthBrand = brandList.stream()
                 // Convert to uppercase
-                //.map(BrandFlowUtils::upperText)
+                .map(BrandFlowUtils::upperText)
                 // Filter list
                 .filter(BrandFlowUtils::lengthBrandPredicate)
                 // Sort brands by length
